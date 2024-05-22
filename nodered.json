@@ -1,0 +1,179 @@
+[
+    {
+        "id": "0edc29d41e478e70",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3fe412142a958ac4",
+        "type": "debug",
+        "z": "0edc29d41e478e70",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e6628d693125b5c4",
+        "type": "MSSQL",
+        "z": "0edc29d41e478e70",
+        "mssqlCN": "67e38596e1fbeeab",
+        "name": "testball",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "query": "\"InsertTopScorers\"",
+        "modeOpt": "",
+        "modeOptType": "execute",
+        "queryOpt": "payload",
+        "queryOptType": "editor",
+        "paramsOpt": "",
+        "paramsOptType": "editor",
+        "rows": "rows",
+        "rowsType": "msg",
+        "parseMustache": true,
+        "params": [
+            {
+                "output": false,
+                "name": "jsondata",
+                "type": "NVarChar",
+                "valueType": "msg",
+                "value": "payload",
+                "options": {
+                    "nullable": true,
+                    "primary": false,
+                    "identity": false,
+                    "readOnly": false
+                }
+            }
+        ],
+        "x": 640,
+        "y": 320,
+        "wires": [
+            [
+                "3fe412142a958ac4"
+            ]
+        ]
+    },
+    {
+        "id": "5973e38e5e8baa52",
+        "type": "http request",
+        "z": "0edc29d41e478e70",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:8000",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 210,
+        "y": 520,
+        "wires": [
+            [
+                "1a8adef54efe7838"
+            ]
+        ]
+    },
+    {
+        "id": "9c2d13007d70b144",
+        "type": "inject",
+        "z": "0edc29d41e478e70",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 360,
+        "wires": [
+            [
+                "5973e38e5e8baa52"
+            ]
+        ]
+    },
+    {
+        "id": "1a8adef54efe7838",
+        "type": "function",
+        "z": "0edc29d41e478e70",
+        "name": "function 4",
+        "func": "\n\nreturn msg; ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 500,
+        "wires": [
+            [
+                "df04b02db36f9f18",
+                "e6628d693125b5c4"
+            ]
+        ]
+    },
+    {
+        "id": "df04b02db36f9f18",
+        "type": "debug",
+        "z": "0edc29d41e478e70",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "67e38596e1fbeeab",
+        "type": "MSSQL-CN",
+        "tdsVersion": "7_4",
+        "name": "NHATTRUONG",
+        "server": "127.0.0.1",
+        "port": "1433",
+        "encyption": true,
+        "trustServerCertificate": true,
+        "database": "testball",
+        "useUTC": true,
+        "connectTimeout": "15000",
+        "requestTimeout": "15000",
+        "cancelTimeout": "5000",
+        "pool": "5",
+        "parseJSON": false,
+        "enableArithAbort": true,
+        "readOnlyIntent": false
+    }
+]

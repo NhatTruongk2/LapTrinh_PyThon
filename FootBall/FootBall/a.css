@@ -1,0 +1,117 @@
+﻿body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    background: url('https://images.elipsport.vn/anh-seo-tin-tuc/2024/2/mordovia-arena-saransk-1527915860667205779137.webp') no-repeat center center;
+}
+
+#header {
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    border-bottom: 5px solid #4CAF50;
+}
+
+#table-container {
+    width : 800px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+#header {
+    text-align: center; /* Canh giữa các ảnh */
+}
+
+    #header img {
+        width: 150px; /* Điều chỉnh kích thước chiều rộng của các ảnh */
+        height: auto; /* Tự động tính toán chiều cao để giữ tỷ lệ */
+        margin: 0 10px; /* Khoảng cách giữa các ảnh */
+        display: inline-block; /* Hiển thị các ảnh cùng hàng với nhau */
+        animation: blink 5s infinite;
+    }
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+#content-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.side-div {
+    background: url('https://thethaodonga.com/wp-content/uploads/2023/04/hinh-nen-bong-da-4k.jpg') no-repeat center center;
+    background-size: cover;
+    width: 15%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
